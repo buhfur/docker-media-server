@@ -1,0 +1,98 @@
+---
+services:
+  deluge:
+    image: lscr.io/linuxserver/deluge:latest
+    container_name: deluge
+
+    networks: 
+      - torrent_network
+    depends_on:
+      - protonvpn
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - DELUGE_LOGLEVEL=error #optional
+      - DELUGE_PASSWORD=youronyourown
+
+    volumes:
+      - /root/docker-media-server/deluge-config:/config
+      - /mnt/content/server/downloads:/downloads
+      - /mnt/content/server/shows:/downloads/shows
+      - /mnt/content/server/movies:/downloads/movies
+      - /mnt/content/server/games:/downloads/games
+      
+    ports:
+      - 8112:8112
+      - 6881:6881
+      - 6881:6881/udp
+      - 58846:58846 #optional
+    restart: unless-stopped
+
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    networks: 
+        - torrent_network
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - /var/lib/radarr:/config
+      - /mnt/content/server/movies:/movies #optional
+        #- /path/to/download-client-downloads:/downloads #optional
+    ports:
+      - 7878:7878
+    restart: unless-stopped
+
+  jackett:
+    image: lscr.io/linuxserver/jackett:latest
+    container_name: jackett
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - AUTO_UPDATE=true #optional
+        #- RUN_OPTS= #optional
+    volumes:
+      - /root/containers/jackett-config:/config
+        #- /dev/null:/downloads
+    ports:
+      - 9117:9117
+    restart: unless-stopped
+
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    networks: 
+        - torrent_network
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - /var/lib/sonarr:/config
+      - /mnt/content/server/shows:/tv #optional
+        #- /path/to/downloadclient-downloads:/downloads #optional
+    ports:
+      - 8989:8989
+    restart: unless-stopped
+
+  protonvpn:
+    image: qmcgaw/gluetun
+    container_name: protonvpn
+    cap_add:
+      - NET_ADMIN
+    devices:
+        - /dev/net/tun:/dev/net/tun
+    environment:
+      - VPN_SERVICE_PROVIDER=protonvpn
+      - OPENVPN_USER=6Okj9p9L8pQtI2Lo+pmp
+      - OPENVPN_PASSWORD=HTO4zlO8lftnTqiEMZVtePeUAmSuzDwR
+      - PORT_FORWARD_ONLY=on
+      - VPN_PORT_FORWARDING=on
+
+networks:
+  torrent_network:
+    driver: bridge 

@@ -1,0 +1,40 @@
+{
+    "file": 2,
+    "format": 1
+}{
+    "base": "/",
+    "cert": "ssl/daemon.cert",
+    "default_daemon": "",
+    "enabled_plugins": [],
+    "first_login": false,
+    "https": false,
+    "interface": "0.0.0.0",
+    "language": "",
+    "pkey": "ssl/daemon.pkey",
+    "port": 8112,
+    "pwd_salt": "e921cdeaac157bd93a6ee497bd81f0bced88eed2",
+    "pwd_sha1": "a189b366ff3339ba68538c3173535324a4cca722",
+    "session_timeout": 3600,
+    "sessions": {
+        "5a25f7d4a74e3995e52e09daeec523890dce5ea68ac0b1737b897994efb50dea": {
+            "expires": 1730466230.0,
+            "level": 10,
+            "login": "admin"
+        },
+        "7681168389c777607100a0b79d3ade2de3842779acc46a2bf0d80e85583128f3": {
+            "expires": 1730466299.0,
+            "level": 10,
+            "login": "admin"
+        },
+        "f59cb71b4651394ad3fdcd06efd698c74420c531d55d0770940c32c42beb7771": {
+            "expires": 1730463274.0,
+            "level": 10,
+            "login": "admin"
+        }
+    },
+    "show_session_speed": false,
+    "show_sidebar": true,
+    "sidebar_multiple_filters": true,
+    "sidebar_show_zero": false,
+    "theme": "gray"
+}
