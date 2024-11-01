@@ -13,7 +13,7 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
       - DELUGE_LOGLEVEL=error #optional
-      - DELUGE_PASSWORD=youronyourown
+      - DELUGE_PASSWORD=password
 
     volumes:
       - /root/docker-media-server/deluge-config:/config
