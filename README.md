@@ -17,7 +17,7 @@ This project is aimed at converting my existing torrenting infra to docker conta
     [Install]
     WantedBy=multi-user.target
     ```
-> Replace "/root/containers/compose.yml" using the path where you downloaded the git repo to.
+> Replace "/root/containers/compose.yml" using the path where you downloaded the git repo to **before** copying the file over to /etc/systemd/system
 
 - Basic installation 
     1. Install the repo to a directory of your choosing 
