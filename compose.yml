@@ -104,7 +104,7 @@ services:
     environment:
       - VPN_SERVICE_PROVIDER=protonvpn
       - OPENVPN_USER=6Okj9p9L8pQtI2Lo+pmp
-      - OPENVPN_PASSWORD=HTO4zlO8lftnTqiEMZVtePeUAmSuzDwR
+      - OPENVPN_PASSWORD=
       - PORT_FORWARD_ONLY=on
       - VPN_PORT_FORWARDING=on
 
