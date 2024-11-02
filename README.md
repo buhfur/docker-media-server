@@ -51,3 +51,6 @@ This project is aimed at converting my existing torrenting infra to docker conta
         ```bash
         sudo systemctl status compose.service
         ```
+- Configuration
+    1. You will need to configure your OpenVPN password in the compose.yml file
+
