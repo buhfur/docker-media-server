@@ -30,4 +30,24 @@ This project is aimed at converting my existing torrenting infra to docker conta
         ```bash
         docker compose up -d 
         ```
-
+- Systemd installation
+    - Copy file over to /etc/systemd/system
+        ```bash
+        sudo cp ./compose.service /etc/systemd/system/
+        ```
+    - Enable service 
+        ```bash
+        sudo systemctl enable compose.service
+        ```
+    - Stat service 
+        ```bash
+        sudo systemctl start compose.service 
+        ```
+    - Restart service 
+        ```bash
+        sudo systemctl restart compose.service
+        ```
+    - Check status 
+        ```bash
+        sudo systemctl status compose.service
+        ```
