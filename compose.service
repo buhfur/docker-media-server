@@ -1,12 +1,1 @@
-
-[Unit]
-Description="starts docker containers"
-After=network.target
-
-[Service]
-Type=simple 
-ExecStart=/usr/bin/docker compose  -f /root/containers/compose.yml up  
-Restart=on-failure
-
-[Install]
-WantedBy=multi-user.target
+/etc/systemd/system/compose.service
