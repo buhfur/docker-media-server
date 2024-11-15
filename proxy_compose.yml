@@ -1,0 +1,34 @@
+on: '3.7'
+services:
+  protonvpn:
+    image: protonvpn-container
+    container_name: protonvpn
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun
+    restart: always
+    networks:
+      - vpn_network
+
+    deluge:
+      image: linuxserver/deluge
+      container_name: deluge
+      environment:
+        - PUID=1000
+        - PGID=1000
+      volumes:
+        - ./deluge/config:/config
+        - ./downloads:/downloads
+      ports:
+        - 8112:8112
+      depends_on:
+        - protonvpn
+      networks:
+        - vpn_network
+      restart: always
+
+      networks:
+        vpn_network:
+          driver: bridge
+
