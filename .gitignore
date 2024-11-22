@@ -1,5 +1,3 @@
-jellyfin-config/
-jellyfin-cache/
-deluge-config/
-jackett-config/
-
+*
+!.gitignore 
+!compose.yml

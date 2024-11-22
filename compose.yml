@@ -144,8 +144,8 @@ services:
     container_name: protonvpn
     environment:
       - VPN_SERVICE_PROVIDER=protonvpn
-      - PVPN_USERNAME=6Okj9p9L8pQtI2Lo+pmp
-      - PVPN_PASSWORD=HTO4zlO8lftnTqiEMZVtePeUAmSuzDwR
+      - PVPN_USERNAME=
+      - PVPN_PASSWORD=
     volumes:
       - /etc/localtime:/etc/localtime:ro
     cap_add:
