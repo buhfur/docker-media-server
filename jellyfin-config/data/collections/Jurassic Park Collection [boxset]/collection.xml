@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Item>
+  <ContentRating>PG-13</ContentRating>
+  <Added>11/16/2024 02:41:10</Added>
+  <LockData>true</LockData>
+  <LocalTitle>Jurassic Park Collection</LocalTitle>
+  <DisplayOrder>PremiereDate</DisplayOrder>
+  <CollectionItems>
+    <CollectionItem>
+      <Path>/media/movies/Jurassic Park (1993) [2160p] [4K] [BluRay] [5.1] [YTS.MX]/Jurassic.Park.1993.2160p.4K.BluRay.x265.10bit.AAC5.1-[YTS.MX].mkv</Path>
+    </CollectionItem>
+    <CollectionItem>
+      <Path>/media/movies/The Lost World Jurassic Park (1997) [2160p] [4K] [BluRay] [5.1] [YTS.MX]/The.Lost.World.Jurassic.Park.1997.2160p.4K.BluRay.x265.10bit.AAC5.1-[YTS.MX].mkv</Path>
+    </CollectionItem>
+  </CollectionItems>
+</Item>

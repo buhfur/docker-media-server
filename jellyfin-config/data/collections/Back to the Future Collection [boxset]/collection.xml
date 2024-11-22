@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Item>
+  <ContentRating>PG</ContentRating>
+  <Added>11/16/2024 02:41:10</Added>
+  <LockData>true</LockData>
+  <LocalTitle>Back to the Future Collection</LocalTitle>
+  <DisplayOrder>PremiereDate</DisplayOrder>
+  <CollectionItems>
+    <CollectionItem>
+      <Path>/media/movies/Back.to.the.Future.Part.II.1989.REMASTERED.1080p.BluRay.x265-RBG.mp4</Path>
+    </CollectionItem>
+    <CollectionItem>
+      <Path>/media/movies/Back To The Future Part III (1990) [2160p] [4K] [BluRay] [5.1] [YTS.MX]/Back.To.The.Future.Part.III.1990.2160p.4K.BluRay.x265.10bit.AAC5.1-[YTS.MX].mkv</Path>
+    </CollectionItem>
+  </CollectionItems>
+</Item>

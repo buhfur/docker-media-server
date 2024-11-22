@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Item>
+  <ContentRating>PG-13</ContentRating>
+  <Added>11/16/2024 02:41:10</Added>
+  <LockData>true</LockData>
+  <LocalTitle>The Wolverine Collection</LocalTitle>
+  <DisplayOrder>PremiereDate</DisplayOrder>
+  <CollectionItems>
+    <CollectionItem>
+      <Path>/media/movies/Logan (2017) [2160p] [4K] [BluRay] [5.1] [YTS.MX]/Logan.2017.2160p.4K.BluRay.x265.10bit.AAC5.1-[YTS.MX].mkv</Path>
+    </CollectionItem>
+    <CollectionItem>
+      <Path>/media/movies/X-Men Origins Wolverine (2009) [1080p]/X-Men.Origins.Wolverine.2009.1080p.BrRip.x264.YIFY.mp4</Path>
+    </CollectionItem>
+  </CollectionItems>
+</Item>

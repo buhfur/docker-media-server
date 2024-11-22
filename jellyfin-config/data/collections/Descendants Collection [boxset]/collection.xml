@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Item>
+  <ContentRating>G</ContentRating>
+  <Added>11/16/2024 02:41:10</Added>
+  <LockData>true</LockData>
+  <LocalTitle>Descendants Collection</LocalTitle>
+  <DisplayOrder>PremiereDate</DisplayOrder>
+  <CollectionItems>
+    <CollectionItem>
+      <Path>/media/movies/Descendants (2015) [WEBRip] [1080p] [YTS.LT]/Descendants.2015.1080p.WEBRip.x264-[YTS.LT].mp4</Path>
+    </CollectionItem>
+    <CollectionItem>
+      <Path>/media/movies/Descendants The Rise Of Red (2024) [2160p] [4K] [WEB] [5.1] [YTS.MX]/Descendants.The.Rise.Of.Red.2024.2160p.4K.WEB.x265.10bit.AAC5.1-[YTS.MX].mkv</Path>
+    </CollectionItem>
+  </CollectionItems>
+</Item>

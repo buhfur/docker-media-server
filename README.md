@@ -54,3 +54,19 @@ This project is aimed at converting my existing torrenting infra to docker conta
 - Configuration
     1. You will need to configure your OpenVPN password in the compose.yml file
 
+# ProtonVPN deluge config 
+
+* You will need to configure the "incoming address" on the deluge client to the IP of the protonVPN container. The client will still show your public IP , however you can verify if the client is using the proper network connection by using this site here 
+
+![Torrent tracker IP checker](https://www.whatismyip.net/tools/torrent-ip-checker/?hash=32e68ed38b14f01fbca9cab7cddeb06fa73929ad)
+
+* You can find the IP of the docker container by running the command below 
+
+```bash
+docker network inspect docker-media-server_torrent_network
+```
+
+* If you need help finding the bridge name , run `ip addr` and find the IP subnet that matches the one from the command prior
+
+
+```

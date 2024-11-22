@@ -1,11 +1,36 @@
 ---
 services:
+
+  jellyfin:
+    image: jellyfin/jellyfin:latest  # You can specify a version like '10.8.0' if needed
+    container_name: jellyfin
+    environment:
+      - PUID=1000  # Set to the user ID on your host system
+      - PGID=1000  # Set to the group ID on your host system
+      - TZ=Europe/London  # Set the timezone
+    volumes:
+      - ./jellyfin-config:/config  # Configuration files and data
+      - ./jellyfin-cache:/cache    # Cache location
+      - /mnt/content/server/:/media    # Media files (movies, tv shows, music)
+    ports:
+      - "8096:8096"  # Web UI port (default Jellyfin port)
+    restart: unless-stopped
+    devices:
+      - /dev/dri:/dev/dri  # For hardware transcoding (if available)
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+
   deluge:
     image: lscr.io/linuxserver/deluge:latest
     container_name: deluge
 
     networks: 
-      - torrent_network
+      - torrent_network 
+        #ipv4_address: 172.20.0.6
     depends_on:
       - protonvpn
     environment:
@@ -27,6 +52,7 @@ services:
       - 6881:6881
       - 6881:6881/udp
       - 58846:58846 #optional
+        #network_mode: "service:protonvpn"
     restart: unless-stopped
 
   radarr:
@@ -95,19 +121,26 @@ services:
     restart: unless-stopped
 
   protonvpn:
-    image: qmcgaw/gluetun
+    image: walt3rl/proton-privoxy 
     container_name: protonvpn
-    cap_add:
-      - NET_ADMIN
-    devices:
-        - /dev/net/tun:/dev/net/tun
     environment:
       - VPN_SERVICE_PROVIDER=protonvpn
-      - OPENVPN_USER=6Okj9p9L8pQtI2Lo+pmp
-      - OPENVPN_PASSWORD=
-      - PORT_FORWARD_ONLY=on
-      - VPN_PORT_FORWARDING=on
+      - PVPN_USERNAME=
+      - PVPN_PASSWORD=
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 8888:8080
+    restart: unless-stopped
+    devices:
+        - /dev/net/tun
+    networks:
+      - torrent_network
 
 networks:
   torrent_network:
     driver: bridge 
+    external: true
+
