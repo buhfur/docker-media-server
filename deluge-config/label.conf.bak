@@ -32,7 +32,7 @@
             "max_download_speed": -1,
             "max_upload_slots": -1,
             "max_upload_speed": -1,
-            "move_completed": false,
+            "move_completed": true,
             "move_completed_path": "/downloads/movies",
             "prioritize_first_last": false,
             "remove_at_ratio": false,
@@ -50,7 +50,7 @@
             "max_download_speed": -1,
             "max_upload_slots": -1,
             "max_upload_speed": -1,
-            "move_completed": false,
+            "move_completed": true,
             "move_completed_path": "/downloads/shows",
             "prioritize_first_last": false,
             "remove_at_ratio": false,
@@ -58,7 +58,5 @@
             "stop_ratio": 2.0
         }
     },
-    "torrent_labels": {
-        "321c21a8779e0405b069a1a2da2592861d2d60fe": "games"
-    }
+    "torrent_labels": {}
 }

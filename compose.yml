@@ -1,6 +1,21 @@
 ---
 services:
 
+  # Jellyfin proxy 
+  nginx:
+    image: nginx:latest 
+    container_name: jellyfin-proxy
+    ports:
+      - "80:80"
+
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - jellyfin
+    restart: unless-stopped
+    networks:
+      - torrent_network
+
   jellyfin:
     image: jellyfin/jellyfin:latest  # You can specify a version like '10.8.0' if needed
     container_name: jellyfin
@@ -22,6 +37,10 @@ services:
       options:
         max-size: "10m"
         max-file: "3"
+
+    networks:
+      - torrent_network
+
 
 
   deluge:
@@ -125,8 +144,8 @@ services:
     container_name: protonvpn
     environment:
       - VPN_SERVICE_PROVIDER=protonvpn
-      - PVPN_USERNAME=
-      - PVPN_PASSWORD=
+      - PVPN_USERNAME=6Okj9p9L8pQtI2Lo+pmp
+      - PVPN_PASSWORD=HTO4zlO8lftnTqiEMZVtePeUAmSuzDwR
     volumes:
       - /etc/localtime:/etc/localtime:ro
     cap_add:
