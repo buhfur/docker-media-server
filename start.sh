@@ -8,4 +8,4 @@
 docker container prune -f
 
 # Start services
-docker compose -f /root/docker-media-server/compose.yml up 
+docker compose -f /root/docker-media-server/compose.yml up -d 
