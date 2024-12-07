@@ -1,3 +1,16 @@
 *
 !.gitignore 
 !compose.yml
+./jellyfin-config/*
+./jellyfin-cache/*
+./protonvpn-config/*
+./listrr-config/*
+./listrr-data/*
+./jackett-config/*
+./deluge-config/*
+./traktarr-config/*
+./ssl/*
+
+
+
+
