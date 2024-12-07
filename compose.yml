@@ -44,7 +44,7 @@ services:
     image: lscr.io/linuxserver/deluge:latest
     container_name: deluge
 
-    network_mode: none
+      #network_mode: none
     depends_on:
       - protonvpn
     environment:
