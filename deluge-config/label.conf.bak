@@ -14,7 +14,7 @@
             "max_download_speed": -1,
             "max_upload_slots": -1,
             "max_upload_speed": -1,
-            "move_completed": false,
+            "move_completed": true,
             "move_completed_path": "/downloads/games",
             "prioritize_first_last": false,
             "remove_at_ratio": false,
@@ -58,5 +58,8 @@
             "stop_ratio": 2.0
         }
     },
-    "torrent_labels": {}
+    "torrent_labels": {
+        "7eb6de4529af686dc87356a810b1e107fa21b9e5": "shows",
+        "b78bdef76c67c69cff23eb59d5ed9deb95c38320": "shows"
+    }
 }

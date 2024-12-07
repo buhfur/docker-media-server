@@ -14,5 +14,5 @@ firewall-cmd --add-port=8191/tcp --zone=docker --permanent
 firewall-cmd --add-port=8191/udp --zone=docker --permanent
 firewall-cmd --add-port=8096/tcp --zone=docker --permanent
 firewall-cmd --add-port=80/tcp --zone=docker --permanent
-
+firewall-cmd --add-port=8080/tcp --zone=docker
 firewall-cmd --reload

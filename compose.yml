@@ -2,6 +2,7 @@
 services:
 
   # Jellyfin proxy 
+  #
   nginx:
     image: nginx:latest 
     container_name: jellyfin-proxy
@@ -15,7 +16,6 @@ services:
     restart: unless-stopped
     networks:
       - torrent_network
-
   jellyfin:
     image: jellyfin/jellyfin:latest  # You can specify a version like '10.8.0' if needed
     container_name: jellyfin
@@ -26,7 +26,7 @@ services:
     volumes:
       - ./jellyfin-config:/config  # Configuration files and data
       - ./jellyfin-cache:/cache    # Cache location
-      - /mnt/content/server/:/media    # Media files (movies, tv shows, music)
+      - /mnt/content/server:/media    # Media files (movies, tv shows, music)
     ports:
       - "8096:8096"  # Web UI port (default Jellyfin port)
     restart: unless-stopped
@@ -37,19 +37,14 @@ services:
       options:
         max-size: "10m"
         max-file: "3"
-
     networks:
       - torrent_network
-
-
 
   deluge:
     image: lscr.io/linuxserver/deluge:latest
     container_name: deluge
 
-    networks: 
-      - torrent_network 
-        #ipv4_address: 172.20.0.6
+    network_mode: none
     depends_on:
       - protonvpn
     environment:
@@ -73,6 +68,10 @@ services:
       - 58846:58846 #optional
         #network_mode: "service:protonvpn"
     restart: unless-stopped
+    networks:
+      vpn_net:
+      local_net:
+
 
   radarr:
     image: lscr.io/linuxserver/radarr:latest
@@ -85,7 +84,8 @@ services:
       - TZ=Etc/UTC
     volumes:
       - /var/lib/radarr:/config
-      - /mnt/content/server/movies:/movies #optional
+      - /mnt/content/server/movies:/movies
+
         #- /path/to/download-client-downloads:/downloads #optional
     ports:
       - 7878:7878
@@ -118,7 +118,7 @@ services:
       - TZ=Etc/UTC
     volumes:
       - /var/lib/sonarr:/config
-      - /mnt/content/server/shows:/tv #optional
+      - /mnt/content/server/shows:/tv
         #- /path/to/downloadclient-downloads:/downloads #optional
     ports:
       - 8989:8989
@@ -143,9 +143,9 @@ services:
     image: walt3rl/proton-privoxy 
     container_name: protonvpn
     environment:
-      - VPN_SERVICE_PROVIDER=protonvpn
-      - PVPN_USERNAME=
-      - PVPN_PASSWORD=
+      #- VPN_SERVICE_PROVIDER=protonvpn
+      - PVPN_USERNAME=6Okj9p9L8pQtI2Lo+pmp
+      - PVPN_PASSWORD=HTO4zlO8lftnTqiEMZVtePeUAmSuzDwR
     volumes:
       - /etc/localtime:/etc/localtime:ro
     cap_add:
@@ -162,4 +162,8 @@ networks:
   torrent_network:
     driver: bridge 
     external: true
+  vpn_net:
+      driver: bridge
+  local_net:
+      driver: bridge
 
