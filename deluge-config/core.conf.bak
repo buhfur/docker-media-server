@@ -79,7 +79,7 @@
         "proxy_hostnames": true,
         "proxy_peer_connections": true,
         "proxy_tracker_connections": true,
-        "type": 0,
+        "type": 4,
         "username": ""
     },
     "queue_new_to_top": false,
