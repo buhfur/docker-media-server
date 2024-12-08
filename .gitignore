@@ -1,7 +1,7 @@
 *
 !.gitignore 
 !compose.yml
-./jellyfin-config/*
+jellyfin-config/*
 ./jellyfin-cache/*
 ./protonvpn-config/*
 ./listrr-config/*
